@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Travel Website</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+
+
+
+
+<body>
+  <img id="logo" src="images/logo.png" width="165" height="100">
+  <div id="menu">
+    <a id="home">Home</a>
+    <a id="seoul">Seoul</a>
+    <a id="tokyo">Tokyo</a>
+    <a id="paris">Paris</a>
+  </div>
+ <img id="photo" src="images/home.png" width="90%">
+
+  <script>
+
+  $('#home').on('click',homeClick);
+  $('#seoul').on('click',seoulClick);
+  $('#tokyo').on('click',tokyoClick);
+  $('#paris').on('click',parisClick);
+
+    function homeClick(){
+       $('#photo').attr('src','images/home.png');
+       $('#home').css('fontWeight','bold');
+       $('#seoul').css('fontWeight','normal');
+       $('#tokyo').css('fontWeight','normal');
+       $('#paris').css('fontWeight','normal');
+  }
+
+  function seoulClick(){
+
+      $('#photo').attr('src','images/seoul.png');
+      $('#seoul').css('fontWeight','bold');
+      $('#home').css('fontWeight','normal');
+      $('#tokyo').css('fontWeight','normal');
+      $('#paris').css('fontWeight','normal');
+
+  }
+
+
+  function tokyoClick(){
+      $('#photo').attr('src','images/tokyo.png');
+      $('#tokyo').css('fontWeight' ,'bold');
+      $('#home').css('fontWeight','normal');
+      $('#seoul').css('fontWeight','normal');
+      $('#paris').css('fontWeight','normal');
+  }
+
+  function parisClick(){
+      $('#photo').attr('src','images/paris.png');
+      $('#paris').css('fontWeight' ,'bold');
+      $('#home').css('fontWeight','normal');
+      $('#seoul').css('fontWeight','normal');
+      $('#tokyo').css('fontWeight','normal');
+  }
+
+</script>
+</body>
+
+
+</html>

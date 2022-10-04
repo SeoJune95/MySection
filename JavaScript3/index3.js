@@ -382,19 +382,307 @@
 //}
 
 
-var inputNumber = window.prompt("한 자리 숫자를 입력해 주세요.");
-switch(inputNumber) {
-    case '0':
-        alert('Zero');
-        break
-    case '1':
-        alert('One');
-        break
-    case '7':
-        alert('Lucky!');
-        break
-    default:
-        alert('Unlucky');
-        break
-}
+// var inputNumber = window.prompt("한 자리 숫자를 입력해 주세요.");
+// switch(inputNumber) {
+//     case '0':
+//         alert('Zero');
+//         break
+//     case '1':
+//         alert('One');
+//         break
+//     case '7':
+//         alert('Lucky!');
+//         break
+//     default:
+//         alert('Unlucky');
+//         break
+// }
+
+
+
+//switch문
+//var score = 85;
+//
+//if (score > 70) {
+//    alert('잘 하셨습니다');
+//}
+//
+//switch (score) {
+//    case 71:
+//        alert('잘 하셨습니다.');
+//        break;
+//    case 72:
+//        alert('잘 하셨습니다.');
+//        break;
+//}
+
+//var course = 'C';
+//
+//switch(course) {
+//    case 'A':
+//    alert('짜장면,짬뽕,탕수육,양장피,팔보채');
+//    break;
+//
+//    case 'B':
+//    alert('짜장면,짬뽕,탕수육,양장피,팔보채,메뉴1,메뉴2');
+//    break;
+//
+//    case 'C':
+//    alert('짜장면,짬뽕,탕수육,양장피,팔보채,메뉴1,메뉴2,메뉴3');
+//    break;
+//}
+
+
+//var course= 'C';
+//
+//switch(course) {
+//    case 'C':
+//        console.log("게살스프, 칠리새우");
+//    case 'B':
+//        console.log("유산슬");
+//    case 'A':
+//        console.log("자장면, 짬뽕,탕수육,양장피,팔보채");
+//    break
+//}
+
+
+//function checkPrice(grades){
+//    let VIPPrice = 15;
+//    let Rprice = 13;
+//    let Sprice = 10;
+//    let Aprice = 8;
+//    let Bprice = 5;
+//
+//    switch(grades){
+//    case 'VIP':
+//        console.log(`VIP석의 가격은 ${VIPPrice}원 입니다.`);
+//        break;
+//    case 'R':
+//        console.log(`R석의 가격은 ${Rprice}원 입니다.`);
+//        break;
+//    case 'S':
+//        console.log(`S석의 가격은 ${Sprice}원 입니다.`);
+//        break;
+//    case 'A':
+//        console.log(`A석의 가격은 ${Aprice}원 입니다.`);
+//        break;
+//    case 'B':
+//        console.log(`B석의 가격은 ${Bprice}원 입니다.`);
+//        break;
+//
+//    }
+//}
+//
+//checkPrice('VIP');
+//checkPrice('R');
+//checkPrice('S');
+//checkPrice('A');
+//checkPrice('B');
+
+
+
+
+
+
+//for문
+//for(초기값; 조건부분; 추가동작부분) {
+//    동작부분 수행
+//}
+// for(let <<< for문의 로컬변수임. for 블록 안에서만 사용가능.
+// for () 안에 세미콜론은 반드시 있어야 한다. 초기화, 조건부분 두개는 비어있더라도 반드시 ; 를 써 주어야함.
+//let i = 3;
+//for (; i <= 10;){
+//    console.log(`${i}. 웹개발 수강생 화이팅!`)
+//    i++;
+//}
+//
+//console.log(i);
+
+
+
+
+//테스트 해보기
+//function trianglePrint(height){
+//    star = '';
+//    for (var i = 0;i <= height; i = i+1){
+//        star = star + '*';
+//        console.log('*');
+//    }
+//
+//}
+//trianglePrint(5);
+
+
+
+//// 변수 2개를 만들어 arr의 첫번재 값을 1등으로
+//// 두 번째 값을 2등으로 설정
+//function secondBigNumber(arr) {
+//    var first = [0];
+//    var second = [1];
+//    for(var i = i; i < arr.length; i++){
+//        if(arr[i] > first) {
+//            second = first;
+//            first = arr[i];
+//        }else if(arr[i] > second) {
+//            second = arr[i];
+//        }
+//    }return second;
+//}
+//
+//console.log(secondBigNumber([1,9,8,6,7,23,5,3]));
+//console.log(secondBigNumber([9,6,8]));
+
+
+//for of 반복문
+//var brands = ['HYNDAI','APPLE','SAMSUNG'];
+//
+//for (let i = 0; i < 3; i++){
+//    console.log(brands[i]);
+//}
+//// 일반적인 for문
+//
+////for of 문 인덱싱 할 필요도 없음. brandsName 변수로 다 적용
+//for (brandsName of brands) {
+//    console.log(brandsName);
+//}
+//
+////for in 문 for of 문저처럼 배열의 값에 접근하는게 아니라 배열의 인덱스(주소)에 접근.
+//var arr = ['아메리카노','라떼','티'];
+//for(var v in arr){
+//    console.log(v);
+//}
+//
+//var arr = ['아메리카노','라떼','티'];
+//for(var v of arr){
+//    console.log(v);
+//}
+
+
+//while문
+//while(조건부분) {
+//    조건부분이 충족하지 않을때 까지 반복동작부분
+//}
+
+//let i = 1;
+//while (i <= 10){
+//    console.log(`${i}웹개발`)
+//    i++
+//}
+////for 문과 비교
+//for (let i = 1; i <= 10; i++){
+//    console.log(`${i}웹개발`)
+//}
+
+
+
+//let i = 30;
+//while (i % 7 != 0){
+//    i++;
+//}
+//console.log(i);
+
+//1~100까지 홀수 구하는 방법 세가지
+//let i = 1;
+//while (i <= 100){
+//    if(i % 2 === 1){
+//        console.log(i);
+//    }
+//    i++
+////}
+
+//let i = 1;
+//while(i <= 50){
+//    console.log(i * 2 - 1);
+//    i++;
+//}
+
+//let i = 1;
+//while(i<=100){
+//    console.log(i);
+//    i += 2;
+//}
+
+//break 문 WHILE 문에서 밖으로 나오고 싶을때 break문 사용. loop방지.
+//var i = 100;
+//while (true) {
+//    if (i % 23 == 0){
+//        break;
+//    }
+//    i = i + 1;
+//}
+//console.log(i);
+//
+//for(let i =1; i<=10; i++) {
+//    console.log(i);
+//    if (i===7){
+//        break;
+//    }
+//}
+////continue문은 현재 진행되고 있는 수행 부분을 중단을 시키고 조건부분을 다시 확인하고 싶을때 사용.
+//var i=0;
+//while(i<15) {
+//    i=i+1;
+//    if(i%2==1){
+//        continue;
+//    }
+//    console.log(i);
+//}
+
+//아래 코드 결과값은 4까지만 출력된다. 5번째에서 break되었기 때문에.
+//var i = 1;
+//while (i<=20){
+//    if ( i===5 ) {
+//        break;
+//    }
+//    console.log(i);
+//    i++
+//}
+
+//짝수만 출력해줌.
+//for(let i = 1; i <= 50; i++){
+//    if (i%2!=0) {
+//
+//        continue;
+//    }
+//    console.log(i);
+//    i++;
+//}
+
+
+//HTML ID 받아오기 document.getElementById
+//HTML CLASS 받아오기 document.getElementsByClassName
+//여러개의 CLASS 받아오면 배열처럼 보이지만 정확히는 배열이 아님. 배열과 형태는 유사하지만 배열의 일부 기능을 사용할수 없는상태.
+//이를 '유사배열(Array Like Object)' 이라고 부름.
+
+//const myTags = document.getElementsByClassName('color-btn');
+//console.log(myTags[0]);       // 클래스 이름이 하나에 여러개의 값이 있는경우 배열처럼 받을 수 있음.7개의 배열중 [0]번째,[2]번째 이렇게.
+//console.log(myTags.length);    // 배열의 개수(length) 까지 받아올 수있음.
+//for (let tag of myTags) {     //for of 문으로 하나씩 출력할 수 있음.
+//    console.log(tag);
+//}
+//for of 문으로 하나씩 출력할 수 있음.
+//getElemtByClassName 할땐 HTML문서 에서 위에서 아래로 차례대로 순서가 나옴. 자식으로 얼마나 들어가있느냐는 중요하지 않음.
+
+//const myTags = document.getElementsByClassName('red');
+//console.log(myTags);
+//console.log(myTags[0]);     //0번 인덱스로 접근해야 진짜 값을 받을 수 있음.
+
+const myTags2 = document.getElementsByClassName('hello');
+console.log(myTags2);
+console.log(myTags2[0]);    //존재하지 않는 클래스 선택 시 HTMLCollection[] 으로 결과값이 나옴.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
