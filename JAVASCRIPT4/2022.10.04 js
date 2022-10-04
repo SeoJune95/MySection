@@ -1,0 +1,281 @@
+//아이유 라는 객체
+//{
+//    // 값이름(key) : 값(value)    << 합쳐서 속성이라고 함. 프로퍼티네임(문자열타입) : 프로퍼티벨류
+//    userName:'아이유',
+//    birthDay:'2022',
+//    loveMe:true,
+//    worstCourse:null
+//}
+
+//프로퍼티 네임은 문자열이지만 '' "" 생략함. JS가 알아서 타입변환해줌.
+//프로퍼티 네임 선언할 때 주의할점
+//1. 첫 번째 글자는 반드시 문자, 언더바(_),달러기호중 하나로 시작
+//2. 띄어쓰기 금지
+//3. 하이픈(-) 금지
+//불가피하게 위의 주의점을 어겨야할 시 '1user-name' 으로 '' 나 "" 를 사용.
+
+//프로퍼티 벨류는 모든자료형을 사용할 수 있음. 숫자,문자,null,boolean 등등
+//객체안에 객체도 넣을 수 있다. EX))))
+//{
+//    userName:'아이유',
+//    birthDay:'2022',
+//    loveMe:true,
+//    worstCourse:null
+//    subjectTitle:{
+//            title:'자바스크립트 객체안의 객체',
+//            language:'JavaScript'
+//    }
+//}
+
+//객체 데이터 접근하는 방법
+//let profile =
+//{
+//    // 값이름(key) : 값(value)    << 합쳐서 속성이라고 함. 프로퍼티네임(문자열타입) : 프로퍼티벨류
+//    'user Name':'아이유',
+//    birthDay:'2022-05-17',
+//    'love Me':true,
+//    worstCourse:undefined,
+//    subjectTitle: {
+//           title:'자바스크립트 객체안의 객체',
+//           language:'JavaScript'
+//    }
+//}
+//객체에 접근하는 방법은 크게 2가지
+//1. 점 표기법 (상위 코드 console.log 에서 나오는 방법) << 하지만 ''로 감싼 객체는 . 표기법으로는 접근할 수 없다.
+//console.log(profile.birthDay);
+//2. 대괄호 표기법(점표기법으로 접근할 수 없을때 대괄호표기법으로 접근.)
+//console.log(profile['love Me']);
+//console.log(profile['user' + 'Name']);
+
+//객체 안의 객체에 접근하는 방법
+//console.log(profile.subjectTitle.title);
+//console.log(profile.subjectTitle['course']); // 언디파인드 출력.
+
+
+//객체안에 수정
+//console.log(profile.userName);
+//profile.userName = '제니';
+//console.log(profile.userName);
+//객체안에 추가
+//console.log(profile.gender);
+//profile.gender = '여성';
+//console.log(profile.gender);
+//객체안에 삭제
+//console.log(profile.worstCourse);
+//delete profile.worstCourse;
+//console.log(profile.worstCourse);
+
+//존재하지 않는 프로퍼티 값은 언디파인드. 불일치 비교 후 객체의 존재값 비교
+//console.log(profile.userName === undefined);
+//in 연산자를 통해서 profile 객체안에 프로퍼티가 있는지 확인 후 불린값으로 리턴.
+//왜 in 이라는 연산자가 존재할까? -> 훨씬 짧아서 코딩간편, 프로퍼티를 사용할 때 조금 더 안전하게 사용할 수 있음.
+//console.log('userName' in profile);
+//
+//console.log(profile.worstCourse === undefined);   //이 코드는 worstCourse 값이 undefined 라서 true로 반환.
+//console.log('worstCourse' in profile);          // 이 코드는 worstCourse 값이 undefined 라서 false로 반환.
+//
+//if('userName' in profile) {
+//console.log(`userName 값은 ${profile.userName}`)
+//}else{
+//    console.log(`userName 프로퍼티는 존재하지 않습니다.`);
+//}
+
+
+
+
+////객체와 메서드관계
+//let greetings = {
+//    sayHello:function(name){
+//        console.log(`Hello ${name}`);
+//    },
+//    sayHi:function(){
+//        console.log('Hi');
+//    },
+//    sayBye:function(){
+//        console.log('Bye!');
+//    }
+//}
+////객체의 프로퍼티밸류는 모든 자료형이 사용가능하기 때문에 함수도 사용가능. 이를 객체의 매서드라고 부름.
+//
+////매서드 호출 방법 (점 표기법)
+//greetings.sayHello();
+//greetings.sayBye();
+////매서드 함수의 파라미터가 있을때?
+//greetings.sayHello('반갑!');
+////콘솔 로그도 비슷함.
+////대괄호로 표기법
+//greetings['sayHello']('아이융~');
+//let rectAngle = {
+//    width:30,
+//    height:50,
+//    getArea:function(){
+//        return rectAngle.width * rectAngle.height;
+//    }
+//}
+//
+//
+//let triAngle = {
+//    width:15,
+//    height:40,
+//    getArea:function(){
+//        return triAngle.width * triAngle.height / 2;
+//    }
+//}
+//매서드를 이용하면 다른함수의 이름 중복을 피할 수 있음.
+//사용할 때 객체의 고유한 동작으로 봐서 좀 더 의미있는 코드를 작성가능.
+
+//for .. in 문 으로 객체 확인 객체의 프로퍼티를 확인할 때 사용하는 반복문.
+//for(변수 in 객체) {
+//    동작
+//}
+//let codingSchool = {
+//    name:'코딩학원',
+//    bornYear:'2022',
+//    isVeryNice:true,
+//    worstCourse:null,
+//    bestCourse:'스프링부트 프로그래밍'
+//}
+//for (let key in codingSchool) {
+//    console.log(key);  /// 프로퍼티네임 값
+//    console.log(codingSchool[key]); // 프로퍼티 밸류 값
+//}
+//let myObject = {
+//    '2' : '알고리즘의 정석',
+//    '3' : '파이썬 완전 정복',
+//    '1' : '자바스크립트 뿌시기'
+//};
+//
+//for (let key in myObject) {
+//    console.log(myObject[key]);
+//}
+//순서가 1 2 3 순으로 출력이됌. 데이터가 꼬일 수 있음.
+//객체의 정렬방식살펴보기
+//let myObject = {
+//    '300' : '정수',
+//    '1.2' : '소수',
+//    '-1' : '음수'
+//};
+//
+//for (let key in myObject) {
+//    console.log(`${key}의 자료형은 ${typeof key} 입니다.`); // 모두 string 자료형이 출력.
+//}
+//
+//console.log(myObject['300']); //정수 출력
+//console.log(myObject['1.2']); // 소수 출력
+//console.log(myObject.300); // 오류발생
+
+////정수 프로퍼티네임활용 ( for-in 문 사용시 주의해야할 점 은 정수형 프로퍼티 네임이다.)
+////프로퍼티네임이 정수형이면 오름차순으로 먼저 정렬하고, 나머진 추가한 순서대로 정렬 한다.
+//let myObject = {
+//    3:'정수3',
+//    name:'Hello',
+//    1:'정수1',
+//    age:'13',
+//    2:'정수2'
+//}
+//for (let key in myObject) {
+//    console.log(key);
+//    console.log(myObject[key]);
+//} // 결과값이 1 2 3 name age 로 나옴. 정수형 프로퍼티네임을 먼저 오름차순으로 정렬하고 나머지는 추가순으로 정렬.
+//// 객체의 정렬 방식을 잘 이해하고 있어야함.
+
+
+//날짜 시간 가져오기
+//let myDate = new Date();
+//console.log(myDate);
+//new Date(특정한 값); 을 넣어서 원하는 날짜를 생성할 수있음.
+//let myDate = new Date(1000); //UTC(국제 사회가 사용하는 표준시간 {1970년 1월 1일 00:00:00}) 따라서 +1000 밀리초 만큼 지난시간 표시.
+//console.log(myDate);         //밀리초 1초를 1000으로 이는 너무 불편함. 기준이 1970 이기 때문에.
+//let myDate = new Date('2022-09-01T00:01:09'); //문자열로 넣을 수 있음.년-월-일T시-분-초
+//console.log(myDate);
+//let myDate = new Date(값,값,값...);
+//new Date(YYY,MM,DD,hh,mm,ss,ms); //MM은 0이 1월이고 1이 2월 2이 3월... 이렇게 되고 12 부터는 다시 1월로 돌아온다.
+//let myDate = new Date(2022,0,1); // 이는 1월을 뜻한다.
+////console.log(myDate);
+//let myDate = new Date(2022,8,1);
+//let today = new Date();
+//let timeDiff = myDate.getTime() - today.getTime();
+//console.log(timeDiff + '밀리초');
+//console.log(timeDiff + '초');
+//console.log(timeDiff /1000/60+'분');
+//console.log(timeDiff /1000/60/60+'시간');
+//
+//let myDate = new Date(2022,8,1,19,11,16);
+//console.log(myDate.getFullYear());
+//console.log(myDate.getMonth());
+//console.log(myDate.getDate()); // 일자
+//console.log(myDate.getDay()); // 요일
+//console.log(myDate.getHours());
+//console.log(myDate.getMinutes());
+//console.log(myDate.getSeconds());
+//console.log(myDate.getMilliseconds());
+////요일은 일요일 부터 시작. 일요일은 0 토요일은 6
+////따라서 일0 월1 화2 수3 목4 금5 토6 이렇게 된다.
+
+//(대괄호로 감싸진 요소들은 선택적인 요소 입니다.)
+//setFullyear(year,[month],[date])
+//setMonth(month,[date])
+//setDate(date)
+//setHours(hours,[min],[sec],[ms])
+//setMinutes(min,[sec],[ms])
+//setSeconds(sec,[ms])
+//setMilliSeconds(ms)
+//setTime(milliseconds) 1970년 1월 1일 00:00:000 이후를 나타내는 날짜를 설정
+
+//let myDate = new Date();
+//console.log(myDate.toLocaleDateString());
+//console.log(myDate.toLocaleTimeString());
+//console.log(myDate.toLocaleString());
+//날짜 받아오는 여러 방법들(다른 포멧)
+
+////날짜가 이상하면 자동으로 변경. 월은 12이면 1월이고 일은 32일로 지정하면 1일로 지정되는거.
+//let myDate = new Date(2022,0,33);
+//console.log(myDate);
+
+//let myDate = new Date();
+//console.log(Date.now() === myDate.getTime()); // 코드의 간결함과 성능도 올릴 수 있다.
+
+//date 객체의 형변환
+//let myDate = new Date(2022,4,18);
+//let myDate2 = new Date(2022,4,19);
+//console.log(typeof myDate);
+//console.log(String(myDate));
+//console.log(Number(myDate));
+//console.log(Boolean(myDate));
+//
+//console.log(myDate.getTime() === Number(myDate)); // Date 객체끼리 사칙연산도 가능하다!
+//let timeDiff = myDate2 - myDate;
+//console.log(timeDiff);
+//console.log(timeDiff / 1000); //ms
+//console.log(timeDiff / 1000 / 60); //sec
+//console.log(timeDiff / 1000 / 60 / 60); //min
+//console.log(timeDiff / 1000 / 60 / 60 /  60); //hour
+//console.log(timeDiff / 1000 / 60 / 60 / 24); //date
+
+////여러가지 날짜 포멧 사용 가능
+//let date1 = new Date('12/15/1999/ 05:25:30');
+//let date2 = new Date('December 15, 1999 05:25:30');
+//let date3 = new Date('Dec 15 1999 05:25:30');
+//console.log(date1);
+//console.log(date2);
+//console.log(date3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
