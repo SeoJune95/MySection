@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <header>날짜 계산기</header>
+        <input type="date" id="startDate" name="startDate" value="2022-10-04">
+        <div id="showToday">
+            <p id="showTodayDate"></p>
+        </div>
+        <div id="calcResult">
+            <p id="calcResultDate"></p>
+        </div>
+    </div>
+</body>
+<script>
+    $('#startDate').on('input',dateCalc);
+    let today = new Date();
+
+    $(function(){
+        $('#showTodayDate').text(`오늘은 ${today.getFullYear()}년 ${today.getMonth()+1}월 ${today.getDate()}일 입니다.`);
+    })
+
+    function dateCalc() {
+
+            let inputDate = new Date($('#startDate').val());
+            let Calc = today - inputDate;
+            $('#calcResultDate').html(`오늘을 기준으로 ${Math.floor(Calc/1000/60/60/24+1)}일째 입니다.`);
+            console.log(inputDate);
+    }
+</script>
+</html>
