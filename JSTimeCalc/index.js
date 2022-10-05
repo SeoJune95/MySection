@@ -11,4 +11,5 @@ function dateCalc() {
         let Calc = today - inputDate;
         $('#calcResultDate').html(`오늘을 기준으로 ${Math.floor(Calc/1000/60/60/24+1)}일째 입니다.`);
         console.log(inputDate);
+
 }
